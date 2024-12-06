@@ -1,0 +1,192 @@
+.text-justify {
+    text-align: justify;
+}
+
+/* Initial styling for the navbar */
+.navbar {
+    transition: all 0.3s ease;
+}
+
+.navbar.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.navbar-collapse{
+    color: white !important;
+    font-size: medium !important;
+    font-weight: 600 !important;
+    z-index: 100;
+}
+
+.navbar.sticky .navbar-nav .nav-link {
+    font-size: 0.9rem;
+    
+    /* Decrease font size */
+}
+.nav-link a{
+    color: white;
+    font-size: medium;
+    font-weight: 600 !important;
+}
+
+.navbar.sticky {
+    /* Dark background when sticky */
+    background-color: #00f7ff; 
+    padding: 10px 20px;
+}
+
+.navbar-brand,
+.nav-link {
+    transition: all 0.3s ease;
+    font-weight: 600 !important;
+}
+
+/* Adjustments for smaller screens */
+.navbar-toggler-icon {
+    /* background-color: rgb(0, 0, 0); */
+}
+
+/* Custom CSS for aligning the logo to the left and nav to the right */
+/* .navbar .container-fluid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+} */
+
+/* Content styling for better demonstration */
+.content {
+    height: 2000px;
+    padding-top: 80px;
+}
+
+/* Adjustments for smaller screens */
+.navbar-toggler-icon {
+    color: black;
+    /* background-color: rgb(83, 83, 83); */
+}
+
+/* Custom CSS for aligning the logo to the left and nav to the right */
+.navbar .container-fluid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Container to hold the logos */
+.carousel-container {
+    width: 100%;
+    overflow: hidden;
+    /* Hide logos that are out of view */
+    position: relative;
+}
+
+.carousel-track {
+    display: flex;
+    /* Arrange logos horizontally */
+    animation: scrollLeft 10s linear infinite;
+    /* Infinite scrolling animation */
+}
+
+.carousel-track img {
+    height: 100px;
+    /* Fixed height for logos */
+    object-fit: contain;
+    /* Maintain aspect ratio of logos */
+    margin-right: 50px;
+    /* Space between logos */
+}
+
+.swiper {
+    position: relative;
+    width: 100%;
+    height: 400px;
+}
+
+.swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.swiper-slide-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.slide-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 10;
+}
+
+.slide-text h2 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+.slide-text p {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+/* Initially hide the buttons */
+.swiper-button-next,
+.swiper-button-prev {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    color: rgb(252, 252, 252);
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 1rem;
+    border-radius: 50%;
+}
+
+/* Show buttons on hover of the swiper-slide */
+.swiper-slide:hover .swiper-button-next,
+.swiper-slide:hover .swiper-button-prev {
+    opacity: 1;
+    visibility: visible;
+}
+
+.swiper-pagination {
+    bottom: 20px;
+}
+
+/* Define the scrolling animation */
+@keyframes scrollLeft {
+    0% {
+        transform: translateX(0);
+        /* Start position */
+    }
+
+    100% {
+        transform: translateX(-50%);
+        /* Move left until the entire row is out of view */
+    }
+}
+
+/* Duplicate the logos to create an infinite effect */
+.carousel-track-duplicate {
+    display: flex;
+}
